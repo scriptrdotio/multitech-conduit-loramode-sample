@@ -1,0 +1,2 @@
+var UIChannel = "responseChannel";
+var APIChannel = "requestChannel";

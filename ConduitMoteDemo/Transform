@@ -1,0 +1,22 @@
+var pubsub = require("pubsub");
+var config = require("/ConduitMoteDemo/config")
+
+try {
+    var payload = JSON.parse(request.body.payload);
+    
+    // Make sure it's a data packet, not a control frame
+    if (payload.data && payload.appeui) {
+        var fields = atob(payload.data).replace(/\u0000/g, "").split(" ");
+        
+        var light = fields[0];
+        var temp = fields[1];
+        
+        if(!isNaN(light) && !isNaN(temp)) {
+            pubsub.publish(config.UIChannel, {"id": "light", result: light});
+        	pubsub.publish(config.UIChannel, {"id": "temp", result: temp});
+        	pubsub.publish(config.UIChannel, {"id": "realTimeReading", result: {"light": light, "temperature": temp}});
+        }
+    }
+} catch (err) {
+    return "Unexpected message format.";
+}

@@ -1,0 +1,19 @@
+var pubsub = require("pubsub");
+var document =  require("document");
+var config = require("/ConduitMoteDemo/config")
+
+var data = JSON.parse(request.rawBody)
+var key = "MultitechDemoHistorical";
+var log = require("log");
+log.setLevel("INFO");
+    
+var result = document.get(key);
+
+if(result && result.result) {
+     var temp = JSON.parse(result.result["history"]);
+     log.info("Document: "+JSON.stringify(result.result))
+     pubsub.publish(config.UIChannel, {"id": "historical", result: temp});
+     pubsub.publish(config.UIChannel, {"id": "light", result: temp[0].light });
+     pubsub.publish(config.UIChannel, {"id": "temperature", result: temp[0].temperature });
+}
+return temp
