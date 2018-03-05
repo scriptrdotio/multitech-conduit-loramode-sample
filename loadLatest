@@ -1,6 +1,6 @@
 var pubsub = require("pubsub");
 var document =  require("document");
-var config = require("/ConduitMoteDemo/config")
+var config = require("/modules/ConduitMoteDemo/config")
 
 var data = JSON.parse(request.rawBody)
 var key = "MultitechDemoHistorical";

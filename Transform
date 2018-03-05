@@ -1,5 +1,5 @@
 var pubsub = require("pubsub");
-var config = require("/ConduitMoteDemo/config")
+var config = require("/modules/ConduitMoteDemo/config")
 
 try {
     var payload = JSON.parse(request.body.payload);

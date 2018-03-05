@@ -128,7 +128,7 @@
 										transport='wss'
 										boxLabel='Temperature'
 										msg-tag='temp'
-										api='ConduitMoteDemo/loadLatest'
+										api='modules/ConduitMoteDemo/loadLatest'
 										value-font-color='#999'
 										min='-30'
 										max='100'
@@ -175,7 +175,7 @@
 										transport='wss'
 										boxLabel='Light'
 										msg-tag='light'
-										api='ConduitMoteDemo/loadLatest'
+										api='modules/ConduitMoteDemo/loadLatest'
 										value-font-color='#999'
 										min='0'
 										max='11000'
@@ -255,7 +255,7 @@
 										point-fill-colors='[null]'
 										goals='[null]'
 										events='[null]'
-										api='ConduitMoteDemo/loadLatest'
+										api='modules/ConduitMoteDemo/loadLatest'
                                   		on-format-data='vm.lineFormatData7'
                            ></scriptr-chart> </div>
                         </div>
@@ -299,7 +299,7 @@
 										point-fill-colors='[null]'
 										goals='[null]'
 										events='[null]'
-										api='ConduitMoteDemo/loadLatest'
+										api='modules/ConduitMoteDemo/loadLatest'
                                   		on-format-data='vm.lineFormatData8'
                            ></scriptr-chart> </div>
                         </div>
